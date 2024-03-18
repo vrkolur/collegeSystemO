@@ -10,6 +10,8 @@
       <th scope="col">Student Name</th>
       <th scope="col">Email</th>
       <th scope="col">Gender</th>
+      <th scope="col">Cource Enrolled</th>
+      <th scope="col">Delete</th>
     </tr>
  </thead>
  <tbody>
@@ -19,8 +21,12 @@
         <td><%= student.name%></td>
         <td><%= student.email %></td>
         <td><%= student.gender %></td>
-        <td> <%= button_to 'Delete',destroy_student_path(student.id), method: :delete %></td> 
-
+        <td> <% data = [] %> 
+        <% student.enrollments.each do |enrollment| %> 
+            <% data.push(enrollment.cource.name) %> 
+        <% end %>
+        <%= data.join(', ') %></td>
+        <td> <%= button_to 'Delete',destroy_student_path(student.id), method: :delete,class:"btn btn-danger" %></td> 
       </tr>
     <% end %>
  </tbody>
