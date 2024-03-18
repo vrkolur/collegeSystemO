@@ -1,0 +1,17 @@
+<!-- app/views/enrollments/new.html.erb -->
+<h1>Enroll in a cource</h1>
+
+<%if Current.student%>
+   <%= form_with model:@enrollment,url: enroll_path do |form| %>
+   <div>
+      <%= form.label :cource_id, "Select cource" %>
+      <%= form.collection_select :cource_id, @cource, :id, :name, prompt: "Select a cource" %>
+   </div>
+
+   <div>
+      <%= form.submit "Enroll" %>
+   </div>
+   <% end %>
+<%else%>
+   
+<%end%>

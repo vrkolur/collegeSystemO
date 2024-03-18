@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center align-items-center">
+    <h2> Cources</h1>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th >Id</th>
+            <th >Name</th>
+            <th >Length in Hrs:</th>
+        </tr>
+    <thead>
+    <tbody>
+        <% @cources.each do |cource| %>
+            <tr>
+                <td><%= cource.id %></td>
+                <td><%= cource.name %></td>
+                <td><%= cource.length %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+

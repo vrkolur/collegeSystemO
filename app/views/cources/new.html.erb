@@ -1,0 +1,28 @@
+<div class="d-flex align-items-center justify-content-center ">
+    <h3> Enter Cource Details</h3>
+</div>
+<%= form_with model:@cource, url: add_cource_path do |form| %>
+
+    <%if form.object.errors.any?%>
+        <div class="alert alert-danger">
+            <%= form.object.errors.full_message.each do |message| %>
+                <div><%= message %></div> 
+            <%end%>    
+        </div>
+    <%end%>
+
+    <div class="mb-3">
+    <%= form.label :name%>
+    <%= form.text_field :name ,class:"form-control", placeholder:"Ex: Computer Science "%>
+    </div>
+
+    <div class="mb-3">
+    <%= form.label :length%>
+    <%= form.text_field :length ,class:"form-control", placeholder:"Ex: 10"%>
+    </div>
+
+    <div class="mb-3">
+    <%= form.submit class:"btn btn-primary"%>
+    </div>
+
+<%end%>
