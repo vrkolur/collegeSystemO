@@ -23,6 +23,15 @@
                 <%end%>
                 </li>
             </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <% if Current.student==nil && Current.teacher %>
+                  <%if Current.teacher.id==4%>
+                    <%= link_to "All Students", show_all_students_path, class:"nav-link active" %>
+                  <%end%>
+                <%end%>
+                </li>
+            </ul>
             <ul class="navbar-nav ms-auto mb-2 ">
             <% if Current.student%>
               <li class="nav-item">

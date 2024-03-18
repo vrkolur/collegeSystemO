@@ -1,0 +1,27 @@
+
+<div class="d-flex justify-content-center  align-items-center"> 
+    <h1>List of all Students in College</h1>
+</div>
+
+<table class="table table-striped">
+ <thead>
+    <tr>
+      <th scope="col">Student Id</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Gender</th>
+    </tr>
+ </thead>
+ <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id%></td>
+        <td><%= student.name%></td>
+        <td><%= student.email %></td>
+        <td><%= student.gender %></td>
+        <td> <%= button_to 'Delete',destroy_student_path(student.id), method: :delete %></td> 
+
+      </tr>
+    <% end %>
+ </tbody>
+</table>

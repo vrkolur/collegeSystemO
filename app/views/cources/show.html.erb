@@ -8,6 +8,7 @@
             <th >Id</th>
             <th >Name</th>
             <th >Length in Hrs:</th>
+            <th >Taken by:</th>
         </tr>
     <thead>
     <tbody>
@@ -16,6 +17,7 @@
                 <td><%= cource.id %></td>
                 <td><%= cource.name %></td>
                 <td><%= cource.length %></td>
+                <td><%= cource.teacher.name %></td>
             </tr>
         <% end %>
     </tbody>

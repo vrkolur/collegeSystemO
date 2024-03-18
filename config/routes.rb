@@ -42,4 +42,9 @@ Rails.application.routes.draw do
   #show students of a specific teacher
   get "show_students", to:"teachers#students"
 
+  #root teacher stuff
+  get "show_all_students",to:"teachers#allstudents"
+
+  # remove student by root
+  delete "destroy_student/:id", to:"teachers#destroy" , as: :destroy_student
 end
