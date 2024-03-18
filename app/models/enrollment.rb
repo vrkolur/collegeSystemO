@@ -1,5 +1,11 @@
 class Enrollment < ApplicationRecord
   belongs_to :cource
   belongs_to :student
-  validates :student_id, uniqueness: { scope: :cource_id, message: "Already enroller choose a different option" }
+  validate :student_same_cource
+
+  def student_same_cource
+    if Enrollment.exists?(student_id: student_id, cource_id: cource_id)
+      errors.add(:base, "You are already enrolled in this course.")
+    end
+  end
 end

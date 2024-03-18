@@ -33,10 +33,13 @@ Rails.application.routes.draw do
   get "add_cource", to:"cources#new"
   post "add_cource", to:"cources#create"
 
-    #Enrollment 
-    get "enroll", to:"enrollments#new"
-    post "enroll", to:"enrollments#create"
+  # Enrollment 
+  get "enroll", to:"enrollments#new"
+  post "enroll", to:"enrollments#create"
 
   get "show_cources", to:"cources#show"
+
+  #show students of a specific teacher
+  get "show_students", to:"teachers#students"
 
 end

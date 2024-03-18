@@ -4,9 +4,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <% if Current.student || Current.teacher%>
+                <% if Current.student && Current.teacher==nil%>
                 <%= link_to "Cources", show_cources_path, class:"nav-link active" %>
+                <%end%>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <% if Current.student && Current.teacher==nil%>
                 <%= link_to "Enroll", enroll_path, class:"nav-link active" %>
+                <%end%>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <% if Current.student==nil && Current.teacher %>
+                <%= link_to "Students", show_students_path, class:"nav-link active" %>
                 <%end%>
                 </li>
             </ul>
@@ -24,7 +37,7 @@
               <li class="nav-item">
                 <%= link_to"Edit Profile",edit_profile_path,class:"nav-link" %> 
               </li>
-            <%else%>
+            <%elsif Current.teacher == nil%>
               <li class="nav-item">
                 <%= link_to "Sign Up", register_path ,class:"nav-link"%>
               </li>
@@ -41,7 +54,7 @@
             <li class="nav-item">
                 <%= button_to "Logout", logout_teacher_path, method: :delete, class: "nav-link active" %>
             </li>
-          <% else %>
+          <% elsif Current.student == nil %>
             <li class="nav-item">
                 <%= link_to "Sign Up", register_teacher_path, class: "nav-link" %>
             </li>
