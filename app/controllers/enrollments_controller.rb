@@ -12,7 +12,7 @@ class EnrollmentsController < ApplicationController
         flash[:alert]="success enrollment"
     else
         redirect_to enroll_path 
-        flash[:alert]="Error "
+        flash[:alert]="Already Enrolled Please Choosse another Cource "
        end
     end
    
