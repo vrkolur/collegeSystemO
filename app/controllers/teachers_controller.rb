@@ -16,7 +16,6 @@ class TeachersController < ApplicationController
             redirect_to root_path
             flash[:alert]="Only Root has acces to this Feild"
         end
-        
     end
 
     def destroy 
