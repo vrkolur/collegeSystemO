@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to:"main#index"
 
+  #To edit Passwords
   get "password", to:"passwords#edit", as: :password_edit
   patch "password", to:"passwords#update"
 
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
   #logout for student
   delete "logout_teacher", to:"sessions#destroy_teacher"
 
+  # Add cource Support only by Root User
   get "add_cource", to:"cources#new"
   post "add_cource", to:"cources#create"
 

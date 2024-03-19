@@ -15,6 +15,10 @@ class EnrollmentsController < ApplicationController
         flash[:alert]="Already Enrolled choose a different Cource "
        end
     end
+
+    def show 
+      
+    end
    
     private
    
