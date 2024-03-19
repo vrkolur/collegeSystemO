@@ -1,4 +1,4 @@
-class RegistrationsController < ApplicationController
+class StudentRegistrationsController < ApplicationController
 
     def new 
         @student = Student.new 
@@ -29,7 +29,7 @@ class RegistrationsController < ApplicationController
     end
 
     def update 
-        if Current.student.update(model_params) && !Current.student.nil?
+        if current_student.update(model_params) && !current_student.nil?
             redirect_to root_path 
             flash[:alert]='Student was updates Successfully!'
         else 

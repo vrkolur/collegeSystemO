@@ -1,16 +1,16 @@
 class TeachersController < ApplicationController 
 
     def students 
-        if Current.teacher == nil 
+        if current_teacher == nil 
             redirect_to root_path
             flash[:alert]="Teacher must be logged in to View Students"
         else 
-        @teacher = Current.teacher
+        @teacher = current_teacher
         end
     end
 
     def allstudents
-        if Current.teacher.id ==4
+        if current_teacher.id ==4
             @students = Student.all
         else 
             redirect_to root_path

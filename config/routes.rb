@@ -5,30 +5,32 @@ Rails.application.routes.draw do
   patch "password", to:"passwords#update"
 
   #To register Student 
-  get "register",to: "registrations#new"
-  post "register",to: "registrations#create"
+  get "register",to: "student_registrations#new"
+  post "register",to: "student_registrations#create"
   
   #To register Teacher
   get "register_teacher",to: "teacher_registrations#new"
   post "register_teacher",to: "teacher_registrations#create"
 
-  get "edit_profile",to: "registrations#edit"
-  patch "edit_profile",to: "registrations#update"
+  # For Student Update 
+  get "edit_profile",to: "student_registrations#edit"
+  patch "edit_profile",to: "student_registrations#update"
 
-  get "show_student", to: "registrations#show"
+  get "show_student", to: "student_registrations#show"
 
   #sign in Student
-  get "sign_in", to: "sessions#new" 
-  post "sign_in", to:"sessions#create"
+  get "sign_in", to: "sessions#new_student" 
+  post "sign_in", to:"sessions#create_student"
+  
   #sign in Teacher
-  get "teacher_sign_in", to: "teacher_sessions#new" 
-  post "teacher_sign_in", to:"teacher_sessions#create"
+  get "teacher_sign_in", to: "sessions#new_teacher" 
+  post "teacher_sign_in", to:"sessions#create_teacher"
 
   #logout for student
-  delete "logout", to:"sessions#destroy"
+  delete "logout_student", to:"sessions#destroy_student"
 
   #logout for student
-  delete "logout_teacher", to:"teacher_sessions#destroy"
+  delete "logout_teacher", to:"sessions#destroy_teacher"
 
   get "add_cource", to:"cources#new"
   post "add_cource", to:"cources#create"

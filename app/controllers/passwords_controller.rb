@@ -6,7 +6,7 @@ class PasswordsController < ApplicationController
     end
 
     def update
-        if Current.student.update(password_params)
+        if current_student.update(password_params)
             redirect_to root_path 
             flash[:alert] = "Password Updated"
         else 

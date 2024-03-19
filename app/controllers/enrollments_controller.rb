@@ -6,13 +6,13 @@ class EnrollmentsController < ApplicationController
     end
    
     def create
-       @enrollment = Enrollment.new(enrollment_params.merge(student_id: Current.student.id))
+       @enrollment = Enrollment.new(enrollment_params.merge(student_id: current_student.id))
        if @enrollment.save
         redirect_to root_path
         flash[:alert]="success enrollment"
     else
         redirect_to enroll_path 
-        flash[:alert]="Already Enrolled Please Choosse another Cource "
+        flash[:alert]="Already Enrolled choose a different Cource "
        end
     end
    
