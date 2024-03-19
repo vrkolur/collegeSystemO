@@ -21,7 +21,9 @@ class TeachersController < ApplicationController
     def destroy 
         @student = Student.find(params[:id])
         message = @student.name
+        @enrollments = @student.enrollments
         @student.destroy
+        @enrollments.destroy
         redirect_to show_all_students_path
         flash[:alert]="#{message} deleted Successfully"
     end
