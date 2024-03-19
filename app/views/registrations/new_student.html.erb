@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center justify-content-center ">
     <h3>  Student Registraction</h3>
 </div>
-<%= form_with model:@student, url: register_path do |form| %>
+<%= form_with model:@student, url: register_student_path do |form| %>
 
     <%if form.object.errors.any?%>
         <div class="alert alert-danger">

@@ -12,7 +12,7 @@ class TeacherRegistrationsController < ApplicationController
             redirect_to root_path
             flash[:alert]="Successfully Registered"
         else 
-            redirect_to register_path
+            redirect_to register_teacher_path
             if @teacher.errors.any?
                 @teacher.errors.full_messages.each do |message|
                     flash[:alert]=message

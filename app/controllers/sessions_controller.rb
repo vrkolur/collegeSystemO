@@ -44,4 +44,5 @@ class SessionsController < ApplicationController
         redirect_to root_path 
         flash[:alert]="Logged Out"
     end
+    
 end

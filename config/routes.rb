@@ -5,18 +5,16 @@ Rails.application.routes.draw do
   patch "password", to:"passwords#update"
 
   #To register Student 
-  get "register",to: "student_registrations#new"
-  post "register",to: "student_registrations#create"
+  get "register_student",to: "registrations#new_student"
+  post "register_student",to: "registrations#create_student"
   
   #To register Teacher
-  get "register_teacher",to: "teacher_registrations#new"
-  post "register_teacher",to: "teacher_registrations#create"
+  get "register_teacher",to: "registrations#new_teacher"
+  post "register_teacher",to: "registrations#create_teacher"
 
   # For Student Update 
-  get "edit_profile",to: "student_registrations#edit"
-  patch "edit_profile",to: "student_registrations#update"
-
-  get "show_student", to: "student_registrations#show"
+  get "edit_profile",to: "registrations#edit_student"
+  patch "edit_profile",to: "registrations#update_student"
 
   #sign in Student
   get "sign_in", to: "sessions#new_student" 
